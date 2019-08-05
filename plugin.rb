@@ -8,17 +8,21 @@ PRO_SIGNUP_URL = "https://www.pianogroove.com/pianogroove-pro"
 after_initialize do
   module UploadsControllerExtension
     def show
-      if !current_user
+      if !current_user && is_pdf
         return redirect_to PRO_SIGNUP_URL
       end
       super
     end
     
     def show_short
-      if !current_user
+      if !current_user && is_pdf
         return redirect_to PRO_SIGNUP_URL
       end
       super
+    end
+    
+    def is_pdf
+      File.extname(request.original_url) == ".pdf"
     end
   end
   
