@@ -3,7 +3,7 @@
 # version: 0.1
 # author: Angus McLeod
 
-PRO_SIGNUP_URL = "https://www.pianogroove.com/pianogroove-pro"
+PRO_SIGNUP_URL = "https://www.pianogroove.com/join"
 
 after_initialize do
   module UploadsControllerExtension
